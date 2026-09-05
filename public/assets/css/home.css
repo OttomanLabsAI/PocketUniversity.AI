@@ -115,6 +115,10 @@ a.client:hover{ border-color:var(--ink); text-decoration:none; }
   margin-top:.55rem; padding-top:.5rem; position:relative; max-width:16ch; }
 .client .c-cat::before{ content:""; position:absolute; top:0; left:50%;
   transform:translateX(-50%); width:22px; height:1px; background:var(--hair); }
+/* the sub category, under the category in the same voice, a weight lighter */
+.client .c-sub{ font-family:var(--font-brand); font-weight:500; font-size:.53rem;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--ink-60); line-height:1.55;
+  max-width:16ch; }
 .client .c-svc{ font-family:var(--font-serif); font-style:italic; font-size:.84rem;
   line-height:1.45; margin-top:.4rem; max-width:15rem; }
 .client .cbtns{ margin-top:auto; padding-top:.8rem; width:100%; display:flex;
