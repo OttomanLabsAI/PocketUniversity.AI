@@ -1,0 +1,126 @@
+/* ════════════════════════════════════════════════════════════
+   POCKETUNIVERSITY.AI — home page
+   The section dividers, the netflix rails, the video popup and
+   the app cards, as on the OttomanLabs.AI homepage, so the two
+   sites read as one family.
+   ════════════════════════════════════════════════════════════ */
+
+/* large text dividers between sections */
+.section-head{
+  font-family:var(--font-display); font-size:clamp(1.6rem,4vw,2.8rem);
+  letter-spacing:.01em; line-height:1; margin:2.4rem 0 1rem; color:var(--ink);
+  display:flex; align-items:baseline; gap:.9rem; flex-wrap:wrap;
+  scroll-margin-top:1rem;
+}
+main > .section-head:first-child{ margin-top:.4rem; }
+/* future disciplines — greyed until they land */
+.section-head.sh-soon{ opacity:.55; }
+.section-head .sh-sub{ font-family:var(--font-brand); font-style:normal;
+  font-size:clamp(.66rem,1.3vw,.8rem); color:var(--ink-60); letter-spacing:.18em;
+  text-transform:uppercase; }
+
+/* the black name plate under every island card */
+.sel-banner{
+  display:flex; align-items:center; justify-content:center;
+  width:100%; padding:.72rem 1rem; background:var(--ink); color:var(--paper);
+}
+.sel-banner .sel-name{ font-family:var(--font-display); font-size:1.35rem; letter-spacing:.05em; }
+
+.a-github{ justify-content:space-between; padding-top:1.8rem; padding-bottom:1.8rem; gap:.8rem; }
+/* the OttomanAI logo is a black-on-white JPEG: multiply it onto the paper so the
+   white square disappears; on the dark paper invert it and blend the other way */
+.a-github img{ mix-blend-mode:multiply; }
+:root[data-theme="dark"] .a-github img{ filter:invert(1); mix-blend-mode:screen; }
+
+.oval{
+  width:min(230px,100%); aspect-ratio:230/150; border:1px solid var(--ink);
+  border-radius:50%; display:flex; flex-direction:column; align-items:center;
+  justify-content:center; gap:.3rem; position:relative; padding:1rem;
+}
+.oval::before{
+  content:""; position:absolute; inset:7px; border:1px dashed var(--ink);
+  border-radius:50%;
+}
+
+.follow-icons{ display:flex; align-items:flex-end; gap:1.1rem; }
+.social-line{ display:flex; flex-wrap:wrap; justify-content:center; gap:.3rem .9rem; }
+.social-line a{ font-family:var(--font-brand); font-weight:500; font-size:.66rem;
+  letter-spacing:.24em; text-transform:uppercase; }
+
+/* ── netflix rails ── */
+.rail-wrap{ position:relative; margin-bottom:calc(var(--gap) * 1.3); }
+.rail{ display:flex; flex-direction:row; gap:var(--gap); overflow-x:auto; scroll-snap-type:x proximity;
+  padding:2px 2px 8px; scrollbar-width:thin; }
+.rail > *{ flex:0 0 clamp(250px, 25vw, 330px); scroll-snap-align:start; min-width:0; }
+.rail > .box{ justify-content:center; }
+.rcard{ border:1px solid var(--hair); background:var(--paper); display:flex; flex-direction:column; }
+.rcard .isle{ display:block; width:100%; height:auto; }
+.rcard .plate{ color:var(--ink); aspect-ratio:5/4; display:flex; align-items:center; justify-content:center; }
+.rail > .vcard{ flex-basis:clamp(190px, 16vw, 230px); }
+.vcard .plate{ aspect-ratio:9/16; }
+.rail > .wcard{ flex-basis:calc(clamp(190px, 16vw, 230px) * 3.1605); }
+.wcard .plate{ aspect-ratio:16/9; }
+.vcard .plate.vwrap, .wcard .plate.vwrap{ position:relative; overflow:hidden; }
+.vcard .sel-banner, .wcard .sel-banner{ min-height:4.32rem; text-align:center; }
+.vwrap video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.rcard .plate svg{ width:76%; height:auto; }
+.rcard .sel-banner{ margin-top:auto; padding:.5rem .8rem; }
+.rcard .sel-banner .sel-name{ font-size:1.02rem; }
+.ropts{ display:flex; gap:.45rem; padding:.65rem .7rem .75rem; flex-wrap:wrap; }
+.ropt{ flex:1 1 auto; text-align:center; font-family:var(--font-brand); font-weight:600;
+  font-size:.56rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink);
+  border:1px solid var(--ink); padding:.5rem .35rem; text-decoration:none; }
+.ropt:hover{ background:var(--ink); color:var(--paper); text-decoration:none; }
+.ropt.off{ color:var(--ink-35); border-color:var(--hair); cursor:default; }
+button.ropt{ background:none; cursor:pointer; }
+.ropt.off:hover{ background:none; color:var(--ink-35); }
+.rarrow{ position:absolute; top:50%; transform:translateY(-50%); z-index:3;
+  width:42px; height:42px; border-radius:50%; border:1px solid var(--ink);
+  background:var(--paper); color:var(--ink); font-size:1.5rem; line-height:1;
+  display:flex; align-items:center; justify-content:center; cursor:pointer; padding:0 0 .15rem; }
+.rarrow:hover{ background:var(--ink); color:var(--paper); }
+.rarrow.prev{ left:-12px; } .rarrow.next{ right:-12px; }
+@media (hover:none) and (pointer:coarse){ .rarrow{ display:none; } }
+
+/* ── the video popup ── */
+.vmodal{ position:fixed; inset:0; z-index:70; display:flex; align-items:center;
+  justify-content:center; padding:3vh 4vw; }
+.vmodal[hidden]{ display:none; }
+.vmodal-back{ position:absolute; inset:0; background:rgba(0,0,0,.78); }
+.vmodal-box{ position:relative; z-index:1; background:var(--paper);
+  border:1px solid var(--ink); display:flex; flex-direction:column;
+  max-width:min(94vw, 1100px); }
+.vmodal-bar{ display:flex; align-items:center; justify-content:space-between;
+  gap:1rem; background:var(--ink); color:var(--paper); padding:.45rem .5rem .45rem .9rem; }
+.vmodal-title{ font-family:var(--font-display); font-size:1rem; letter-spacing:.06em; }
+.vmodal-acts{ display:flex; gap:.4rem; }
+.vmodal-btn{ font-family:var(--font-brand); font-weight:600; font-size:.58rem;
+  letter-spacing:.16em; text-transform:uppercase; background:none;
+  border:1px solid var(--paper); color:var(--paper); padding:.4rem .7rem; cursor:pointer; }
+.vmodal-btn:hover{ background:var(--paper); color:var(--ink); }
+#vmVideo{ display:block; max-width:100%; max-height:78vh; min-width:min(280px,80vw);
+  background:#000; }
+
+/* ── apps — the client cards, one per app, riding the same rail ── */
+.client{ border:1px solid var(--hair); min-height:190px; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:.28rem; padding:1.1rem .7rem;
+  text-align:center; color:var(--ink); text-decoration:none; transition:border-color .15s; }
+a.client:hover{ border-color:var(--ink); text-decoration:none; }
+.client svg{ width:88px; height:auto; margin-bottom:.35rem; }
+.client .c-logo{ height:62px; width:auto; margin-bottom:.4rem; }
+.client .c-ital{ font-family:var(--font-serif); font-style:italic; font-size:.98rem; }
+.client .c-name{ font-family:var(--font-display); font-size:1.02rem; letter-spacing:.05em; line-height:1.25; }
+.client .c-cat{ font-family:var(--font-brand); font-weight:600; font-size:.53rem;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--ink-60); line-height:1.55;
+  margin-top:.55rem; padding-top:.5rem; position:relative; max-width:16ch; }
+.client .c-cat::before{ content:""; position:absolute; top:0; left:50%;
+  transform:translateX(-50%); width:22px; height:1px; background:var(--hair); }
+.client .c-svc{ font-family:var(--font-serif); font-style:italic; font-size:.84rem;
+  line-height:1.45; margin-top:.4rem; max-width:15rem; }
+.client .cbtns{ margin-top:auto; padding-top:.8rem; width:100%; display:flex;
+  flex-direction:column; gap:.4rem; }
+.cbtn{ display:block; text-align:center; border:1px solid var(--ink); padding:.5rem .4rem;
+  font-family:var(--font-brand); font-weight:600; font-size:.54rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--ink); text-decoration:none; }
+a.cbtn:hover{ background:var(--ink); color:var(--paper); text-decoration:none; }
+.cbtn.off{ color:var(--ink-35); border-color:var(--hair); cursor:default; }

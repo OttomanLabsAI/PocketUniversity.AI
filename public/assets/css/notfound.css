@@ -1,0 +1,4 @@
+/* the themed 404 — one box, centred, in the house voices */
+.nf{ min-height:46vh; margin-top:var(--gap); gap:.8rem; }
+.nf .nf-code{ font-family:var(--font-display); font-size:clamp(3rem,9vw,5.5rem); line-height:1; letter-spacing:.02em; }
+.nf .btn{ margin-top:.6rem; }

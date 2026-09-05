@@ -1,0 +1,24 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+# Static assets are safe to cache hard - change the filename to bust.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# The stylesheets and scripts change with the site and are not fingerprinted -
+# revalidate them like the HTML. Kept AFTER the /assets/* rule so these win.
+/assets/css/*
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/js/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# HTML must stay fresh so a deploy is visible immediately.
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
