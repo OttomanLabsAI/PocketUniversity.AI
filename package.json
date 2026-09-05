@@ -1,0 +1,14 @@
+{
+  "name": "pocketuniversity-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PocketUniversity.AI — tutorials and guides in practical AI, served as Cloudflare Workers static assets",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "check": "wrangler deploy --dry-run"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
