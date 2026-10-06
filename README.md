@@ -12,7 +12,8 @@ iOS app is planned to follow.
   Gherkin and Dymak HQ, each painted on its floating voxel island, linking to
   the concept-design dashboards, the Gherkin studio and the Dymak tutorial on
   ottomanlabs.ai.
-- **Finance & Investing** — PyBuffet and Fadil's Stock Picks.
+- **Finance & Investing** — the Stock Analyst, a web app that analyses what
+  Warren Buffett would say about any company, and Fadil's Stock Picks.
 - **AI Image & Video** — the AI-generated teasers (Lord of the Rings, Pokémon,
   Charizard on the Thames) with the popup player, and the Educational Videos
   pipeline card.
@@ -74,11 +75,13 @@ attach the `pocketuniversity.ai` custom domain to the Worker.
 
 - **Google Fonts** — Afacad Flux, Newsreader and Prata load from
   fonts.googleapis.com; Flux is embedded in `assets/fonts/`.
-- **ottomanlabs.ai** — the tutorials, dashboards, PyBuffet, Stock Picks, the
+- **ottomanlabs.ai** — the tutorials, dashboards, Stock Picks, the
   Reading Room, the CV Builder, Under the Hood, the contact page and the CV
   all live there; the cards on this page link across.
 - **Mailchimp** — the news signup posts to the same list as OttomanLabs.AI.
   It tries `/api/subscribe` first (the first-party relay the main site runs),
   and since this site is static assets only that hop answers 404 and the
   signup goes straight to Mailchimp's JSONP endpoint instead.
+- **warren.pocketuniversity.ai** — the Stock Analyst web app, linked from
+  Finance & Investing and the footer.
 - **VisualNeuroscience.AI** — linked from the Apps section.

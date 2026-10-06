@@ -86,3 +86,4 @@ and studio pages live on ottomanlabs.ai; cards link across to them.
 | --- | --- | --- |
 | v1.0 | The syllabus opens its doors | PocketUniversity.AI is live: a home for tutorials and guides in practical AI, in the same black-and-white style as OttomanLabs.AI. The Gherkin and Dymak HQ head the architecture section, followed by finance, AI image and video, a coming-soon Claude Code certification, the studio and a link to VisualNeuroscience.AI. |
 | v1.1 | VisualNeuroscience.AI filed under Education, Brain atlas | The VisualNeuroscience.AI card now carries a category and a sub category, Education and Brain atlas, in place of the old education-platform label. |
+| v1.2 | Ask what Warren Buffett would say | Finance & Investing now opens with the Stock Analyst, a web app that analyses what Warren Buffett would say about any company, in place of PyBuffet. The footer link follows suit. |
